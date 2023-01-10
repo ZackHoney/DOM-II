@@ -21,13 +21,18 @@ window.onload = function (evt) {
 
 
     document.body.addEventListener('dblclick', evt => {
-        evt.target.outerHTML = '';
+        evt.target.innerHTML = '';
     })
 
 
     window.addEventListener('keydown', evt => {
-        if(evt.key === 6){
-            document.body.outerHTML = 'YOU RAN ORDER 66!'
+        if(evt.key == 6){
+            document.body.innerHTML = 'YOU RAN ORDER 66!'
         }
+    })
+
+    document.body.addEventListener('mousemove', evt => {
+        const { clientX, clientY} = evt
+        console.log(`mouse is at ${clientX}, ${clientY}`)
     })
 }
